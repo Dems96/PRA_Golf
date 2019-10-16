@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="phpspreadsheet is working">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,21 +16,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            <state relative-caret-position="256">
+              <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+              <folding>
+                <element signature="e#34#99#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+            <state relative-caret-position="112">
+              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../projet_symfony/good_movie/templates/internaute/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-511" />
           </provider>
         </entry>
       </file>
@@ -45,6 +54,8 @@
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/templates/index/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/IndexController.php" />
       </list>
     </option>
   </component>
@@ -179,6 +190,28 @@
               <item name="PRA_Golf" type="b2602c69:ProjectViewProjectNode" />
               <item name="PRA_Golf" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="PRA_Golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PRA_Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PRA_Golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PRA_Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PRA_Golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PRA_Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PRA_Golf" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PRA_Golf" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -222,7 +255,7 @@
       <updated>1571127360490</updated>
       <workItem from="1571127361755" duration="1328000" />
       <workItem from="1571129631811" duration="8740000" />
-      <workItem from="1571249541654" duration="2223000" />
+      <workItem from="1571249541654" duration="3980000" />
     </task>
     <task id="LOCAL-00001" summary="commit change">
       <created>1571133315302</created>
@@ -238,14 +271,22 @@
       <option name="project" value="LOCAL" />
       <updated>1571216590262</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="entity">
+      <created>1571251977111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571251977111</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12291000" />
+    <option name="totallyTimeSpent" value="14048000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25929978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -274,7 +315,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit change" />
     <MESSAGE value="phpspreadsheet work" />
-    <option name="LAST_COMMIT_MESSAGE" value="phpspreadsheet work" />
+    <MESSAGE value="entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="entity" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/composer.json">
@@ -286,8 +328,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        <state relative-caret-position="560">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../projet_symfony/good_movie/templates/liste/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../projet_symfony/good_movie/templates/index/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../projet_symfony/good_movie/templates/internaute/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-511" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="59" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
