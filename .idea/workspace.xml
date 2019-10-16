@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="">
+    <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="phpspreadsheet is working">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +16,21 @@
     <pharPath>C:\xampp\htdocs\2eme année\Projet_Golf\PRA_Golf\composer.phar</pharPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1168">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="308">
+              <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -35,6 +44,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -145,6 +155,10 @@
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -207,7 +221,8 @@
       <option name="presentableId" value="Default" />
       <updated>1571127360490</updated>
       <workItem from="1571127361755" duration="1328000" />
-      <workItem from="1571129631811" duration="8216000" />
+      <workItem from="1571129631811" duration="8740000" />
+      <workItem from="1571249541654" duration="2223000" />
     </task>
     <task id="LOCAL-00001" summary="commit change">
       <created>1571133315302</created>
@@ -216,16 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1571133315302</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="phpspreadsheet work">
+      <created>1571216590262</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571216590262</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9544000" />
+    <option name="totallyTimeSpent" value="12291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25382933" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25929978" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -238,7 +260,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26695842" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26586434" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -251,13 +273,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit change" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit change" />
+    <MESSAGE value="phpspreadsheet work" />
+    <option name="LAST_COMMIT_MESSAGE" value="phpspreadsheet work" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="308">
+          <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
         </state>
       </provider>
     </entry>
