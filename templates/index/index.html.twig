@@ -3,8 +3,16 @@
 {% block title %}PRA_GOLF{% endblock %}
 
 {% block body %}
-
-    {% for players in spreadsheet %}
-        <p>{{ players }}</p>
+    <table border="1px">
+        <tr>
+            <th> Nom </th>
+            <th> Niveau</th>
+        </tr>
+    {% for i in json %}
+        <tr>
+            <td>{{ i.nom }}</td>
+            <td>{{ i.rep }}</td>
+        </tr>
     {% endfor %}
+    </table>
 {% endblock %}
