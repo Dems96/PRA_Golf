@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PRA_GOLF{% endblock %}
+
+{% block body %}
+
+    {% for players in spreadsheet %}
+        <p>{{ players }}</p>
+    {% endfor %}
+{% endblock %}
