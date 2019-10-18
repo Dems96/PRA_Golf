@@ -5,25 +5,15 @@
 {% block body %}
     <h2>Entrer le fichier Excel</h2>
 
-    <form enctype="multipart/form-data" method="post">
+    <form enctype="multipart/form-data" method="POST" action="{{ lien }}">
+        <br><input type="file" name="{{ variable }}" value="{{ method }}">
+        <br><br>
 
-        <br><input type="file" name="file[]" size="40">
+        <input type="submit" value="Envoyer">
 
     </form>
-    <br><br>
-    <a href="{{ lien }}">
-        <input type="submit" value="Envoyer" onclick="formulaire()" >
-    </a>
-    <table border="1px">
-        <tr>
-            <th> Nom </th>
-            <th> Niveau</th>
-        </tr>
-    {% for i in json %}
-        <tr>
-            <td>{{ i.nom }}</td>
-            <td>{{ i.rep }}</td>
-        </tr>
-    {% endfor %}
-    </table>
+
+
+    <br><br>C<br><br>
+
 {% endblock %}
