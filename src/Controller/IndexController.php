@@ -16,13 +16,17 @@ class IndexController extends AbstractController
     public function index()
     {
 
-     $players = file_get_contents('D:\Laragon\laragon\www\projet_symfony\PRA_Golf\src\Controller\players.json');
+     $players = file_get_contents('players.json');
      $json = json_decode($players);
      $lien="form";
+     $variabledoc="file";
+     $method='formulaire()';
 
      return $this->render('index/index.html.twig', [
          'json'=>$json,
          'lien'=>$lien,
+         'variable'=>$variabledoc,
+         'method'=>$method,
      ]);
 
 
