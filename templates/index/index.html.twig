@@ -3,16 +3,42 @@
 {% block title %}PRA_GOLF{% endblock %}
 
 {% block body %}
+    {% set count = 0 %}
+
     <table border="1px">
         <tr>
             <th> Nom </th>
             <th> Niveau</th>
         </tr>
     {% for i in json %}
-        <tr>
-            <td>{{ i.nom }}</td>
-            <td>{{ i.rep }}</td>
-        </tr>
+        {% set count = count+1 %}
+        {% if i.rep == "Jaunes" and count <= 3 %}
+            <tr>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.rep }}</td>
+            </tr>
+            {% if count == 3 %}
+                <tr style="border: red;">
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% set count = 0 %}
+            {% endif %}
+
+        {% endif %}
+        {% if i.rep == "Rouges" and count <= 3 %}
+            <tr>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.rep }}</td>
+            </tr>
+            {% if count == 3 %}
+                <tr style="border: red;">
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% set count = 0 %}
+            {% endif %}
+        {% endif %}
     {% endfor %}
     </table>
 {% endblock %}
