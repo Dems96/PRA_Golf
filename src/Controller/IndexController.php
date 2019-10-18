@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-
 
 class IndexController extends AbstractController
 {
@@ -16,12 +16,15 @@ class IndexController extends AbstractController
     public function index()
     {
 
-     $players = file_get_contents('players.json');
+     $players = file_get_contents('D:\Laragon\laragon\www\projet_symfony\PRA_Golf\src\Controller\players.json');
      $json = json_decode($players);
+     $lien="form";
 
      return $this->render('index/index.html.twig', [
-         'json'=>$json
+         'json'=>$json,
+         'lien'=>$lien,
      ]);
+
 
     }
 

@@ -3,6 +3,17 @@
 {% block title %}PRA_GOLF{% endblock %}
 
 {% block body %}
+    <h2>Entrer le fichier Excel</h2>
+
+    <form enctype="multipart/form-data" method="post">
+
+        <br><input type="file" name="file[]" size="40">
+
+    </form>
+    <br><br>
+    <a href="{{ lien }}">
+        <input type="submit" value="Envoyer" onclick="formulaire()" >
+    </a>
     <table border="1px">
         <tr>
             <th> Nom </th>
