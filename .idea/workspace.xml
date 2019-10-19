@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/public/test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/PRA_Golf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PRA_Golf.iml" afterDir="false" />
@@ -10,6 +11,13 @@
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index/index.html.twig" afterDir="false" />
+=======
+    <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +25,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" executionDataType="PHAR" phpInterpreterId="40a7d1eb-a52c-4a19-b313-7afc2ce581ac" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+<<<<<<< HEAD
     <pharPath>C:\xampp\htdocs\2eme année\Projet_Golf\PRA_Golf\composer.phar</pharPath>
   </component>
   <component name="FileEditorManager">
@@ -54,10 +63,16 @@
         </entry>
       </file>
     </leaf>
+=======
+    <execution>
+      <phar pharPath="$PROJECT_DIR$/composer_2.phar" />
+    </execution>
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -76,6 +91,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
@@ -190,6 +207,7 @@
       <path value="$PROJECT_DIR$/vendor/shuchkin/simplexlsx" />
     </include_path>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
@@ -254,6 +272,16 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
+=======
+  <component name="ProjectId" id="1SLRqc7kZ5kuuGMw6ho5rGXwID0" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/PRA_Golf" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -315,8 +343,18 @@
       <workItem from="1571127361755" duration="1328000" />
       <workItem from="1571129631811" duration="8740000" />
       <workItem from="1571249541654" duration="5929000" />
+<<<<<<< HEAD
       <workItem from="1571293529837" duration="29660000" />
       <workItem from="1571382070763" duration="14622000" />
+=======
+      <workItem from="1571293529837" duration="1303000" />
+      <workItem from="1571341082155" duration="1725000" />
+      <workItem from="1571381944979" duration="6260000" />
+      <workItem from="1571398525396" duration="3820000" />
+      <workItem from="1571403002860" duration="1487000" />
+      <workItem from="1571409533417" duration="233000" />
+      <workItem from="1571410739603" duration="409000" />
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
     </task>
     <task id="LOCAL-00001" summary="commit change">
       <created>1571133315302</created>
@@ -361,6 +399,7 @@
       <updated>1571254987898</updated>
     </task>
     <task id="LOCAL-00007" summary="commit">
+<<<<<<< HEAD
       <created>1571295097974</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
@@ -466,8 +505,39 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout-to-restore>
   </component>
+=======
+      <created>1571384185420</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571384185420</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit">
+      <created>1571411035987</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571411035987</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit change" />
@@ -480,6 +550,7 @@
     <MESSAGE value="commit-18/10" />
     <option name="LAST_COMMIT_MESSAGE" value="commit-18/10" />
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
@@ -697,4 +768,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
 </project>

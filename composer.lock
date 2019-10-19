@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "190ac3e074c3142ae294f0c9abd880cc",
+=======
+    "content-hash": "610bbbabce783844bb948c57b723cecd",
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2292,6 +2296,7 @@
                 "controllers"
             ],
             "time": "2019-10-16T18:54:45+00:00"
+<<<<<<< HEAD
         },
         {
             "name": "shuchkin/simplexlsx",
@@ -2339,6 +2344,8 @@
                 "xlsx"
             ],
             "time": "2019-08-15T11:53:52+00:00"
+=======
+>>>>>>> 35ce4307a0c20afd1b528c4b399ef3f09aa862fb
         },
         {
             "name": "swiftmailer/swiftmailer",
