@@ -11,6 +11,17 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 class IndexController extends AbstractController
 {
     /**
+     * @Route("/send_file", name="send")
+     */
+    public function getFile()
+    {
+
+        return $this->render('index/form.html.twig', [
+
+        ]);
+    }
+
+    /**
      * @Route("/index", name="index")
      */
     public function index()
@@ -32,27 +43,24 @@ class IndexController extends AbstractController
 
     }
 
+    /**
+     * @Route("/get_xlsx", name="xlsx")
+     */
     public function setJson()
     {
-        $s_file = 'players.json';
-        $s_fileData = file_get_contents($s_file);
         $tableau_pour_json = array();
 
         $reader = new Xlsx();
         $reader->setReadFilter(new MyReadFilter());
         $reader->setReadDataOnly(true);
 
-        $spreadsheet = $reader->load("test.xlsx");
+        $spreadsheet = $reader->load($_GET['file']);//recois le fichier .xlsx
         $workSheet = $spreadsheet->getActiveSheet();
 
         $workSheet->getCell('B10')->getValue(); // Récupère le nom de la compétition
         $nbJoueurs = $workSheet->getCell('B166')->getValue(); // Récupère le nombre de joueurs
-        $dateCompet = $workSheet->getCell('E63')->getValue(); // Récupère la date de la compétition
-        $nomjoueur = $workSheet->getCell('B25')->getValue();
-        $repJoueur = $workSheet->getCell('I25')->getValue();
 
         $players = new stdClass();
-        $tabPlayers = [];
 
         for ($i = 14; $i < $nbJoueurs;$i++){
 

@@ -3,17 +3,44 @@
 {% block title %}PRA_GOLF{% endblock %}
 
 {% block body %}
-    <h2>Entrer le fichier Excel</h2>
+    <h1>Voici les joueurs trié par équipe: </h1>
 
-    <form enctype="multipart/form-data" method="POST" action="{{ lien }}">
-        <br><input type="file" name="{{ variable }}" value="{{ method }}">
-        <br><br>
+    {% set count = 0 %}
 
-        <input type="submit" value="Envoyer">
+    <table border="1px">
+        <tr>
+            <th> Nom </th>
+            <th> Niveau</th>
+        </tr>
+    {% for i in json %}
+        {% set count = count+1 %}
+        {% if i.rep == "Jaunes" and count <= 3 %}
+            <tr>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.rep }}</td>
+            </tr>
+            {% if count == 3 %}
+                <tr style="border: red;">
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% set count = 0 %}
+            {% endif %}
 
-    </form>
-
-
-    <br><br>C<br><br>
-
+        {% endif %}
+        {% if i.rep == "Rouges" and count <= 3 %}
+            <tr>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.rep }}</td>
+            </tr>
+            {% if count == 3 %}
+                <tr style="border: red;">
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% set count = 0 %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </table>
 {% endblock %}
