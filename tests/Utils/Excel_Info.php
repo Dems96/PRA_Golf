@@ -12,6 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 class Excel_Info extends TestCase
 {
+    // recupere le nombre de joueur attendu present dans le fichier excel
     public function testGetPlayers()
     {
         $testPlayer = new TestPlayers();
@@ -22,6 +23,7 @@ class Excel_Info extends TestCase
         $this->assertEquals($expectedNbPlayer, $testPlayer->getPlayers($nbPlayers));
     }
 
+    //recupere la date attendu présent dans le fichier excel
     public function testDate()
     {
         $testPlayer = new TestPlayers();
@@ -32,6 +34,7 @@ class Excel_Info extends TestCase
         $this->assertEquals($expectedNbPlayer, $testPlayer->getDate($dateCompet));
     }
 
+    //recupere le nom de la competition attendu présent dans le fichier excel
     public function testNomCompet()
     {
         $testPlayer = new TestPlayers();

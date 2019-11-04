@@ -4,23 +4,44 @@
 
 {% block body %}
     <h1>Voici les joueurs trié par équipe: </h1>
-
+    {% set hour = 7 %}
+    {% set minute = 30 %}
+    {% set minMax = 60 %}
     {% set count = 0 %}
 
     <table border="1px">
         <tr>
+            <th>Dép</th>
             <th> Nom </th>
             <th> Niveau</th>
+            {% for i in 0..18 %}
+                <th>{{ i }}</th>
+            {% endfor %}
         </tr>
     {% for i in json %}
         {% set count = count+1 %}
         {% if i.rep == "Jaunes" and count <= 3 %}
-            <tr>
-                <td>{{ i.nom }}</td>
-                <td>{{ i.rep }}</td>
-            </tr>
+                <tr>
+                    {% if count == 1 %}
+                        <td rowspan="3">{{ hour }}:{{ minute }}</td>
+                        {% if minute + 11 > 59 %}
+                            {% set minute = minute + 11 %}
+                            {% set minute = minute - 60 %}
+                            {% set hour = hour+1 %}
+                        {% else %}
+                            {% set minute = minute +11 %}
+                        {% endif %}
+                    {% endif %}
+                    <td>{{ i.nom }}</td>
+                    <td>{{ i.rep }}</td>
+                    {% for d in 0..18 %}
+                        {% if count == 1 %}
+                            <td rowspan="3">times</td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
             {% if count == 3 %}
-                <tr style="border: red;">
+                <tr>
                     <td></td>
                     <td></td>
                 </tr>
@@ -29,11 +50,27 @@
 
         {% endif %}
         {% if i.rep == "Rouges" and count <= 3 %}
+
             <tr>
+                {% if count == 1 %}
+                    <td rowspan="3">{{ hour }}:{{ minute }}</td>
+                    {% if minute + 11 > 59 %}
+                        {% set minute = minute + 11 %}
+                        {% set minute = minute - 60 %}
+                        {% set hour = hour+1 %}
+                    {% else %}
+                        {% set minute = minute +11 %}
+                    {% endif %}
+                {% endif %}
                 <td>{{ i.nom }}</td>
                 <td>{{ i.rep }}</td>
+                {% for d in 0..18 %}
+                    {% if count == 1 %}
+                        <td rowspan="3">times</td>
+                    {% endif %}
+                {% endfor %}
             </tr>
-            {% if count == 3 %}
+            {% if count >= 2 %}
                 <tr style="border: red;">
                     <td></td>
                     <td></td>
