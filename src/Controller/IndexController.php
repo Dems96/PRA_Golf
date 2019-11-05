@@ -3,10 +3,17 @@
 namespace App\Controller;
 
 use stdClass;
+use App\Entity\Task;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
@@ -85,6 +92,45 @@ class IndexController extends AbstractController
         return $this->redirectToRoute('index');
     }
 
+    /**
+     * @Route("/form", name="form")
+     */
+    public function new(Request $request)
+    {
+        $task = new Task();
+        $form = $this->createForm(TaskType::class, $task);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $task = $form->getData();
+
+            // ... perform some action, such as saving the task to the database
+            // for example, if Task is a Doctrine entity, save it!
+            // $entityManager = $this->getDoctrine()->getManager();
+            // $entityManager->persist($task);
+            // $entityManager->flush();
+
+            return $this->redirectToRoute('task_success');
+        }
+
+        return $this->render('index/test.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+}
+class TaskType extends AbstractType
+{
+    // ...
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Task::class,
+        ]);
+    }
 }
 
 class MyReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter
