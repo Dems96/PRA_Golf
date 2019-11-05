@@ -27,7 +27,7 @@ class IndexController extends AbstractController
     public function index()
     {
 
-     $players = file_get_contents('players.json');
+     $players = file_get_contents('D:\Laragon\laragon\www\projet_symfony\PRA_Golf\src\Controller\players.json');
      $json = json_decode($players);
      $lien="form";
      $variabledoc="file";
