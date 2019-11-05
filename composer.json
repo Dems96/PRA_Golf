@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "dompdf/dompdf": "^0.8.3",
         "phpoffice/phpspreadsheet": "^1.9",
         "sensio/framework-extra-bundle": "^5.1",
         "shuchkin/simplexlsx": "^0.8.9",

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use Dompdf\Options;
 use stdClass;
+use PhpOffice\PhpSpreadsheet\Writer\Pdf\Dompdf;
 use App\Entity\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,6 +19,36 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
+    public function getPdf()
+    {
+        /**
+         * @Route("/get_pdf", name="pdf")
+         */
+        // Configure Dompdf according to your needs
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = $this->render('index/index.html.twig');
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser (force download)
+        $dompdf->stream("tabJoueur.pdf", [
+            "Attachment" => true
+        ]);
+    }
+
     /**
      * @Route("/send_file", name="send")
      */
@@ -90,34 +122,6 @@ class IndexController extends AbstractController
             }
         }
         return $this->redirectToRoute('index');
-    }
-
-    /**
-     * @Route("/form", name="form")
-     */
-    public function new(Request $request)
-    {
-        $task = new Task();
-        $form = $this->createForm(TaskType::class, $task);
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $task = $form->getData();
-
-            // ... perform some action, such as saving the task to the database
-            // for example, if Task is a Doctrine entity, save it!
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->persist($task);
-            // $entityManager->flush();
-
-            return $this->redirectToRoute('task_success');
-        }
-
-        return $this->render('index/test.html.twig', [
-            'form' => $form->createView(),
-        ]);
     }
 
 }
