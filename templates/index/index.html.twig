@@ -8,11 +8,11 @@
             <th> Nom </th>
             <th> Niveau</th>
         </tr>
-    {% for i in json %}
-        <tr>
-            <td>{{ i.nom }}</td>
-            <td>{{ i.rep }}</td>
-        </tr>
-    {% endfor %}
+        {% for i in json %}
+            <tr>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.rep }}</td>
+            </tr>
+        {% endfor %}
     </table>
 {% endblock %}

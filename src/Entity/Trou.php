@@ -9,32 +9,41 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Trou
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
+
     private $id;
+    private $HeureD;
+    private $TempsD;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Golf", inversedBy="trous")
-     * @ORM\JoinColumn(nullable=false)
+     * @return mixed
      */
-    private $golf;
+    public function getTempsD()
+    {
+        return $this->TempsD;
+    }
+
+    /**
+     * @param mixed $TempsD
+     */
+    public function setTempsD($TempsD): int
+    {
+        $this->TempsD = $TempsD;
+    }
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getGolf(): ?Golf
+    public function getHeureD(): ?int
     {
-        return $this->golf;
+        return $this->HeureD;
     }
 
-    public function setGolf(?Golf $golf): self
+    public function setHeureD($HeureD): self
     {
-        $this->golf = $golf;
+        $this->HeureD = $HeureD;
 
         return $this;
     }
