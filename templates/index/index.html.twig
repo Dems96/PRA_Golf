@@ -5,52 +5,56 @@
 {% block body %}
 
     <h1>Voici les joueurs trié par équipe: </h1>
-    {% set cadenceMin = 0%}
-    {% set cadenceH = 0%}
+    <a href="{{ path('pdf') }}">
+        <button>Générer en pdf</button>
+    </a>
+    {% set cadenceMin = 0 %}
+    {% set cadenceH = 0 %}
     {% set hour = 7 %}
     {% set minute = 30 %}
     {% set minMax = 60 %}
     {% set count = 0 %}
-        <table border="1px"; style="width: 20px";>
-            <tr style="background-color: yellow">
-                <th>Dép</th>
-                <th> Joueurs </th>
-                {% for i in 0..18 %}
-                    <th>{{ i }}</th>
-                {% endfor %}
-            </tr>
+
+    <table cellpadding="0" cellspacing="0" width="85%" ; border="1px" ; style="width: 20px" ;>
+        <tr style="background-color: yellow">
+            <th>Dép</th>
+            <th> Joueurs</th>
+            {% for i in 0..18 %}
+                <th>{{ i }}</th>
+            {% endfor %}
+        </tr>
         {% for i in json %}
             {% set count = count+1 %}
             {% if i.rep == "Jaunes" and count <= 3 %}
-                    <tr>
+                <tr>
+                    {% if count == 1 %}
+                        <td rowspan="3">{{ hour }}:{{ minute }}</td>
+                        {% if minute + 11 > 59 %}
+                            {% set minute = minute + 11 %}
+                            {% set minute = minute - 60 %}
+                            {% set hour = hour+1 %}
+                            {% set cadenceH = hour %}
+                            {% set cadenceMin = minute+14 %}
+                        {% else %}
+                            {% set cadenceH = hour %}
+                            {% set cadenceMin = minute+14 %}
+                            {% set minute = minute +11 %}
+                        {% endif %}
+                    {% endif %}
+                    <td style="size: 1mm">{{ i.nom }}</td>
+                    {% for d in 0..18 %}
                         {% if count == 1 %}
-                            <td rowspan="3">{{ hour }}:{{ minute }}</td>
-                            {% if minute + 11 > 59 %}
-                                {% set minute = minute + 11 %}
-                                {% set minute = minute - 60 %}
-                                {% set hour = hour+1 %}
-                                {% set cadenceH = hour %}
-                                {% set cadenceMin = minute+14 %}
+                            <td rowspan="3">{{ cadenceH }}:{{ cadenceMin }}</td>
+                            {% if cadenceMin + 15 > 59 %}
+                                {% set cadenceMin = cadenceMin + 15 %}
+                                {% set cadenceMin = cadenceMin - 60 %}
+                                {% set cadenceH = cadenceH +1 %}
                             {% else %}
-                                {% set cadenceH = hour %}
-                                {% set cadenceMin = minute+14 %}
-                                {% set minute = minute +11 %}
+                                {% set cadenceMin = cadenceMin +15 %}
                             {% endif %}
                         {% endif %}
-                        <td>{{ i.nom }}</td>
-                        {% for d in 0..18 %}
-                            {% if count == 1 %}
-                                <td rowspan="3">{{ cadenceH }}:{{ cadenceMin }}</td>
-                                {% if cadenceMin + 15 > 59 %}
-                                    {% set cadenceMin = cadenceMin + 15 %}
-                                    {% set cadenceMin = cadenceMin - 60 %}
-                                    {% set cadenceH = cadenceH +1 %}
-                                {% else %}
-                                    {% set cadenceMin = cadenceMin +15 %}
-                                {% endif %}
-                            {% endif %}
-                        {% endfor %}
-                    </tr>
+                    {% endfor %}
+                </tr>
                 {% if count == 3 %}
                     <tr>
                         <td></td>
@@ -60,11 +64,25 @@
                 {% endif %}
 
             {% endif %}
+
             {% if i.rep == "Rouges" and count <= 3 %}
 
                 <tr>
                     {% if count == 1 %}
-                        <td rowspan="3">{{ hour }}:{{ minute }}</td>
+                        <td rowspan="3">{{ hour }}:{{ minute }} </td>
+                        {% if minute + 11 > 59 %}
+                            {% set minute = minute + 11 %}
+                            {% set minute = minute - 60 %}
+                            {% set hour = hour+1 %}
+                            {% set cadenceH = hour %}
+                            {% set cadenceMin = minute+14 %}
+                        {% else %}
+                            {% set cadenceH = hour %}
+                            {% set cadenceMin = minute+14 %}
+                            {% set minute = minute +11 %}
+                        {% endif %}
+                    {% elseif i.nom == "PLAISANCE Franck" %}
+                        <td rowspan="2">{{ hour }}:{{ minute }} </td>
                         {% if minute + 11 > 59 %}
                             {% set minute = minute + 11 %}
                             {% set minute = minute - 60 %}
@@ -88,10 +106,23 @@
                             {% else %}
                                 {% set cadenceMin = cadenceMin +15 %}
                             {% endif %}
+                        {% elseif i.nom == "PLAISANCE Franck" %}
+                            <td rowspan="2">{{ hour }}:{{ minute }} </td>
+                            {% if minute + 11 > 59 %}
+                                {% set minute = minute + 11 %}
+                                {% set minute = minute - 60 %}
+                                {% set hour = hour+1 %}
+                                {% set cadenceH = hour %}
+                                {% set cadenceMin = minute+14 %}
+                            {% else %}
+                                {% set cadenceH = hour %}
+                                {% set cadenceMin = minute+14 %}
+                                {% set minute = minute +11 %}
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
                 </tr>
-                {% if count >= 2 %}
+                {% if count > 2 %}
                     <tr>
                         <td></td>
                         <td></td>
@@ -100,5 +131,5 @@
                 {% endif %}
             {% endif %}
         {% endfor %}
-        </table>
+    </table>
 {% endblock %}

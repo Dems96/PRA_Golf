@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Dompdf\Options;
 use stdClass;
-use PhpOffice\PhpSpreadsheet\Writer\Pdf\Dompdf;
+use Dompdf\Dompdf;
 use App\Entity\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,11 +19,12 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
+    /**
+     * @Route("/get_pdf", name="pdf")
+     */
     public function getPdf()
     {
-        /**
-         * @Route("/get_pdf", name="pdf")
-         */
+
         // Configure Dompdf according to your needs
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
@@ -32,13 +33,17 @@ class IndexController extends AbstractController
         $dompdf = new Dompdf($pdfOptions);
 
         // Retrieve the HTML generated in our twig file
-        $html = $this->render('index/index.html.twig');
+        $players = file_get_contents('players.json');
+        $json = json_decode($players);
+        $html = $this->render('index/index.html.twig', [
+            "json" => $json,
+        ]);
 
         // Load HTML to Dompdf
         $dompdf->loadHtml($html);
 
         // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->setPaper('A3', 'paysage');
 
         // Render the HTML as PDF
         $dompdf->render();
@@ -66,18 +71,12 @@ class IndexController extends AbstractController
     public function index()
     {
 
-     $players = file_get_contents('players.json');
-     $json = json_decode($players);
-     $lien="form";
-     $variabledoc="file";
-     $method='formulaire()';
+        $players = file_get_contents('players.json');
+        $json = json_decode($players);
 
-     return $this->render('index/index.html.twig', [
-         'json'=>$json,
-         'lien'=>$lien,
-         'variable'=>$variabledoc,
-         'method'=>$method,
-     ]);
+        return $this->render('index/index.html.twig', [
+            'json' => $json,
+        ]);
 
 
     }
@@ -101,13 +100,13 @@ class IndexController extends AbstractController
 
         $players = new stdClass();
 
-        for ($i = 14; $i < $nbJoueurs;$i++){
+        for ($i = 14; $i < $nbJoueurs; $i++) {
 
-            $name = $players->name = $workSheet->getCell('B'.$i)->getValue();
-            $rep = $players->rep = $workSheet->getCell('I'.$i)->getValue();
+            $name = $players->name = $workSheet->getCell('B' . $i)->getValue();
+            $rep = $players->rep = $workSheet->getCell('I' . $i)->getValue();
 
-            if ($name != null && $rep != null){
-                array_push($tableau_pour_json, array('nom'=>$name, 'rep'=>$rep));
+            if ($name != null && $rep != null) {
+                array_push($tableau_pour_json, array('nom' => $name, 'rep' => $rep));
 
                 $contenu_json = json_encode($tableau_pour_json); //convertir le tableau au format json
                 $fichierStockage = 'players.json';
@@ -125,6 +124,7 @@ class IndexController extends AbstractController
     }
 
 }
+
 class TaskType extends AbstractType
 {
     // ...
