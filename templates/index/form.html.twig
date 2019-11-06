@@ -1,13 +1,25 @@
 {% extends 'base.html.twig' %}
 {% block title %} Test {% endblock %}
 {% block body %}
-    <h2>Entrer le fichier Excel</h2>
+    <div class="container" style="text-align: center;">
+        <h1>Entrez vos paramètres de jeu : </h1>
+        <section style="align-items: center;">
+            {{ form_start(form,{'action':path('index'),'method':'GET'}) }}
+            {{ form_label(form.HeureD, 'Heure de départ') }}
+            {{ form_widget(form.HeureD) }}
+            <br>
+            {{ form_label(form.TempsD, 'Cadence') }}
+            {{ form_widget(form.TempsD) }}
+            <br>
+            <h2>Entrer le fichier Excel</h2>
 
-    <form enctype="multipart/form-data" method="GET" action="{{ path('xlsx') }}">
-        <br><input type="file" name="file" value="file">
-        <br><br>
+            <form enctype="multipart/form-data" method="GET" action="{{ path('xlsx') }}">
+                <br><input type="file" name="file" value="file">
+                <br><br>
+            </form>
 
-        <input type="submit" value="Envoyer">
+            {{ form_end(form) }}
+        </section>
+    </div>
 
-    </form>
 {% endblock %}
