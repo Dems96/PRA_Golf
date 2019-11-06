@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Trou;
+use App\Form\TrouType;
 use Dompdf\Options;
 use stdClass;
 use Dompdf\Dompdf;
-use App\Entity\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,6 +20,31 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
+    /**
+     * @Route("/home", name="home")
+     */
+    public function form(Request $request)
+    {
+        $em   = $this->getDoctrine()->getManager();
+        $trou = new Trou();
+        $form = $this->createForm(TrouType::class, $trou);
+        $form->handleRequest($request);
+
+        $trou->getTempsD();
+        $trou->getHeureD();
+
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+            $trou->setTempsD($trou->getTempsD());
+            $trou->setHeureD($trou->getHeureD());
+            $em->persist($trou);
+            $em->flush();
+        }
+        dump($request);
+        return $this->render('index/form.html.twig', [
+            'form' =>  $form->createView(),
+        ]);
+    }
+
     /**
      * @Route("/get_pdf", name="pdf")
      */
