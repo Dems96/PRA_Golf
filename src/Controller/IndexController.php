@@ -2,84 +2,14 @@
 
 namespace App\Controller;
 
-use App\Entity\Trou;
-use App\Form\TrouType;
-use Dompdf\Options;
 use stdClass;
-use Dompdf\Dompdf;
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends AbstractController
 {
-    /**
-     * @Route("/home", name="home")
-     */
-    public function form(Request $request)
-    {
-        $em   = $this->getDoctrine()->getManager();
-        $trou = new Trou();
-        $form = $this->createForm(TrouType::class, $trou);
-        $form->handleRequest($request);
-
-        $trou->getTempsD();
-        $trou->getHeureD();
-
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
-            $trou->setTempsD($trou->getTempsD());
-            $trou->setHeureD($trou->getHeureD());
-            $em->persist($trou);
-            $em->flush();
-        }
-        dump($request);
-        return $this->render('index/form.html.twig', [
-            'form' =>  $form->createView(),
-        ]);
-    }
-
-    /**
-     * @Route("/get_pdf", name="pdf")
-     */
-    public function getPdf()
-    {
-
-        // Configure Dompdf according to your needs
-        $pdfOptions = new Options();
-        $pdfOptions->set('defaultFont', 'Arial');
-
-        // Instantiate Dompdf with our options
-        $dompdf = new Dompdf($pdfOptions);
-
-        // Retrieve the HTML generated in our twig file
-        $players = file_get_contents('players.json');
-        $json = json_decode($players);
-        $html = $this->render('index/index.html.twig', [
-            "json" => $json,
-        ]);
-
-        // Load HTML to Dompdf
-        $dompdf->loadHtml($html);
-
-        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
-        $dompdf->setPaper('A3', 'paysage');
-
-        // Render the HTML as PDF
-        $dompdf->render();
-
-        // Output the generated PDF to Browser (force download)
-        $dompdf->stream("tabJoueur.pdf", [
-            "Attachment" => true
-        ]);
-    }
-
     /**
      * @Route("/send_file", name="send")
      */
@@ -97,12 +27,18 @@ class IndexController extends AbstractController
     public function index()
     {
 
-        $players = file_get_contents('players.json');
-        $json = json_decode($players);
+     $players = file_get_contents('players.json');
+     $json = json_decode($players);
+     $lien="form";
+     $variabledoc="file";
+     $method='formulaire()';
 
-        return $this->render('index/index.html.twig', [
-            'json' => $json,
-        ]);
+     return $this->render('index/index.html.twig', [
+         'json'=>$json,
+         'lien'=>$lien,
+         'variable'=>$variabledoc,
+         'method'=>$method,
+     ]);
 
 
     }
@@ -126,13 +62,13 @@ class IndexController extends AbstractController
 
         $players = new stdClass();
 
-        for ($i = 14; $i < $nbJoueurs; $i++) {
+        for ($i = 14; $i < $nbJoueurs;$i++){
 
-            $name = $players->name = $workSheet->getCell('B' . $i)->getValue();
-            $rep = $players->rep = $workSheet->getCell('I' . $i)->getValue();
+            $name = $players->name = $workSheet->getCell('B'.$i)->getValue();
+            $rep = $players->rep = $workSheet->getCell('I'.$i)->getValue();
 
-            if ($name != null && $rep != null) {
-                array_push($tableau_pour_json, array('nom' => $name, 'rep' => $rep));
+            if ($name != null && $rep != null){
+                array_push($tableau_pour_json, array('nom'=>$name, 'rep'=>$rep));
 
                 $contenu_json = json_encode($tableau_pour_json); //convertir le tableau au format json
                 $fichierStockage = 'players.json';
@@ -149,18 +85,6 @@ class IndexController extends AbstractController
         return $this->redirectToRoute('index');
     }
 
-}
-
-class TaskType extends AbstractType
-{
-    // ...
-
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => Task::class,
-        ]);
-    }
 }
 
 class MyReadFilter implements \PhpOffice\PhpSpreadsheet\Reader\IReadFilter
