@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cadence Time !{% endblock %}
+
+{% block body %}
+<div class="container">
+<h1>Entrez vos paramètres de jeu : </h1>
+    <section>
+{{ form_start(form) }}
+    {{ form_label(form.HeureD, 'Heure de départ') }}
+    {{ form_widget(form.HeureD) }}
+            <br>
+        {{ form_label(form.TempsD, 'Cadence') }}
+        {{ form_widget(form.TempsD) }}
+                <br>
+    <button type="submit">Valider</button>
+    {{ form_end(form) }}
+        </section>
+</div>
+{% endblock %}
