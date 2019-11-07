@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42cbfa65-8ef9-4d29-a5d9-da14e79f34ff" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/IndexController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +183,8 @@
       <workItem from="1572205407717" duration="27000" />
       <workItem from="1572891433888" duration="4280000" />
       <workItem from="1572938155993" duration="102000" />
-      <workItem from="1572938983078" duration="236000" />
+      <workItem from="1572938983078" duration="1781000" />
+      <workItem from="1573122886499" duration="59000" />
     </task>
     <task id="LOCAL-00001" summary="commit change">
       <created>1571133315302</created>
@@ -243,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571411035987</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="check aft vacances">
+      <created>1572939284484</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572939284484</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +275,7 @@
     <MESSAGE value="new commit" />
     <MESSAGE value="entity commit" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="check aft vacances" />
+    <option name="LAST_COMMIT_MESSAGE" value="check aft vacances" />
   </component>
 </project>
